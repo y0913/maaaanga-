@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maaaanga!</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header-left">maaanga!!</div>
+        <div class="header-right">
+          <input type="text" class="form-controll" placeholder="まんがを検索">
+          <li class="new">新規登録</li>
+          <li class="login">ログイン</li>
+        </div>
+    </div>
+    <%= yield %>
+    <footer class="footer">2018 Copyrights Reserved</footer>
+  </body>
+</html>

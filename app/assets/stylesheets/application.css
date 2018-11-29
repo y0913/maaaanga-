@@ -1,0 +1,73 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+.wrapper{
+	background-color: #5cb85c;
+	width: 100vw;
+	height: 80px;
+	line-height: 50px;
+}
+.header-left{
+	font-weight: bold;
+	font-size: 30px;
+	float: left;
+}
+
+.header-right{
+	float: right;
+	list-style: none;
+}
+.new{
+	float: right;
+	border: solid 1px;
+	margin-right: 10px;
+}
+.login{
+	float: right;
+	border: solid 1px;
+	margin-right: 10px;
+}
+.form-controll{
+	height: 40px;
+	margin-right: 10px;
+}
+
+.main-contents-right{
+	background-color: #EEFFFF;
+	height: 100vh;
+	width: 34vw;
+	float: left;
+}
+.cat{
+	height: 100vh;
+	width: 66vw;
+	float: right;
+	position: absolute;
+	object-fit: cover;
+}
+
+button{
+	background-color: #5bc0de;
+	border-color: #5bc0de;
+	text-align: center;
+}
+.footer{
+	clear: both;
+	background-color: #5cb85c;
+	text-align: center;
+	width: 100vw;
+}
