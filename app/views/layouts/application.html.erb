@@ -11,14 +11,26 @@
 
   <body>
     <div class="wrapper">
-      <div class="header-left">maaanga!!</div>
+      <div class="header-left" href="/">maaanga!!</div>
         <div class="header-right">
-          <input type="text" class="form-controll" placeholder="まんがを検索">
-          <li class="new">新規登録</li>
-          <li class="login">ログイン</li>
+            <%= link_to "漫画一覧を見る", search_comics_path, method: :get, class: :form__controll %>
+          <% if user_signed_in? %>
+            <div class = "login">
+              <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+            </div>
+            <div class="post-content">
+              <a class="post" href="/comics/new">投稿する</a>
+            </div>
+            <% else %>
+              <div class="new">
+                <%= link_to "ログイン", new_user_session_path, class: :post %>
+                <%= link_to "新規登録", new_user_registration_path, class: :post %>
+              </div>
+          <% end %>
         </div>
     </div>
-    <%= yield %>
+      <%= yield %>
+    <%= link_to "back to the top", root_path, method: :get %>
     <footer class="footer">2018 Copyrights Reserved</footer>
   </body>
 </html>

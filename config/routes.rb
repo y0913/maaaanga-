@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  get 'comics' => 'comics#index'
+  devise_for :users
+  resources :comics do
+    collection do
+      get 'search'
+    end
+   end
+  root 'comics#index'
 end

@@ -14,12 +14,19 @@
  *= require_self
  */
 
+@import "./reset";
+
+.body{
+	position: absolute;
+}
+
 
 .wrapper{
 	background-color: #5cb85c;
 	width: 100vw;
 	height: 80px;
 	line-height: 50px;
+
 }
 .header-left{
 	font-weight: bold;
@@ -33,17 +40,23 @@
 }
 .new{
 	float: right;
-	border: solid 1px;
+	border: solid;
 	margin-right: 10px;
 }
 .login{
 	float: right;
-	border: solid 1px;
+	border: solid;
 	margin-right: 10px;
 }
-.form-controll{
-	height: 40px;
+.post-content{
+	float: right;
+	border: solid;
 	margin-right: 10px;
+}
+.form__controll{
+	float: right;
+	margin-right: 10px;
+	border: solid;
 }
 
 .main-contents-right{
@@ -70,4 +83,45 @@ button{
 	background-color: #5cb85c;
 	text-align: center;
 	width: 100vw;
+	bottom: 0;
+
+}
+.title-header{
+	text-align: center;
+	font-weight: bold;
+}
+.field{
+	text-align: center;
+}
+
+.actions{
+	text-align: center;
+}
+.main-content__body{
+	margin: 0 auto;
+	width: 80vw;
+	height: 100vh;
+}
+.comic-list{
+	list-style: none;
+	display: inline-block;
+}
+
+.comic-list-row2{
+	list-style: none;
+	display: inline-block;
+}
+
+.comic-list-row3{
+	list-style: none;
+	display: inline-block;
+}
+.comic-list-row4{
+	list-style: none;
+	display: inline-block;
+}
+.comic-lists{
+	display: inline-block;
+	width: 250px;
+	height: 300px;
 }
