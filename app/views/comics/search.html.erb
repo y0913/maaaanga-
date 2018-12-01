@@ -2,34 +2,23 @@
   <div class="main-content__body">
   	<div class="main-content__body-comic">
   		<ul class="comic-list">
-  			<li class='comic-lists'>jojo</li>
-  			<li class='comic-lists'>ナルト</li>
-  			<li class='comic-lists'>こち亀</li>
-  			<li class='comic-lists'>ワンピース</li>
-  		</ul>
-  	</div>
-  	<div class="main-content__body-comic-row2">
-  		<ul class="comic-list-row2">
-  			<li class='comic-lists'>るろうに剣心</li>
-  			<li class='comic-lists'>すごいよマサルさん</li>
-  			<li class='comic-lists'>北斗の拳</li>
-  			<li class='comic-lists'>蒼天の拳</li>
-  		</ul>
-  	</div>
-  	<div class="main-content__body-comic-row3">
-  		<ul class="comic-list-row3">
-  			<li class='comic-lists'>qqqqqq</li>
-  			<li class='comic-lists'>aaaaaa</li>
-  			<li class='comic-lists'>zzzzzz</li>
-  			<li class='comic-lists'>ssssss</li>
-  		</ul>
-  	</div>
-  	<div class="main-content__body-comic-row4">
-  		<ul class="comic-list-row4">
-  			<li class='comic-lists'>eeeeeeeeeee</li>
-  			<li class='comic-lists'>ddddddddddd</li>
-  			<li class='comic-lists'>ccccccccccc</li>
-  			<li class='comic-lists'>rrrrrrrrrrr</li>
+  			<% @comics.each do |comic| %>
+  			<div class="row">
+              <div class="col s12 m6">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="<%= comic.image %>" class="card-size">
+                     <span class="card-title"></span>
+                       <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">#link_to "編集"とする</i></a>
+                   </div>
+                    <div class="card-content">
+                      <p><%= comic.text %></p>
+                 </div>
+               </div>
+              </div>
+             </div>
+  			</li>
+  			<% end %>
   		</ul>
   	</div>
   </div>

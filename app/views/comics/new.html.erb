@@ -1,13 +1,13 @@
 <div class="contents row">
   <div class="container">
-    <%= form_tag('/tweets', method: :post) do %>
+    <%= form_tag('/comics', action: :create, method: :post) do %>
       <h2 class="title-header">
         投稿する
       </h2>
       <div class="field">
         <input placeholder="Image Url" type="text" name="image">
           <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
-          <input type="submit" value="SENT">
+          <input type="submit" value="SENT" '/search'>
       </div>
     <% end %>
   </div>

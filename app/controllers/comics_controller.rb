@@ -5,9 +5,18 @@ class ComicsController < ApplicationController
 		@comics = Comic.new
 	end
 	def create
-      Comics.create(name: params[:name], image: params[:image], text: params[:text])
-      redirect_to action: :index
+      Comic.create(name: params[:name], image: params[:image], text: params[:text])
     end
+
     def search
+    	@comics = Comic.new
+    	@comics = Comic.order("created_at DESC")
     end
+
+
+    private
+    def tweet_params
+      params.permit(:name, :image, :text)
+    end
+
 end
