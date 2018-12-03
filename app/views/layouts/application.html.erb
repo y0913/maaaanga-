@@ -18,7 +18,6 @@
     <div class="wrapper">
       <%= link_to "Maaaanga!", root_path, class: :header__left %>
         <div class="header-right">
-            <%= link_to "漫画一覧を見る", search_comics_path, method: :get, class: :form__controll %>
           <% if user_signed_in? %>
             <div class = "login">
               <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>

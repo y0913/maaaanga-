@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+  <% if @comics.like_user(current_user.id) %>
+    <%= button_to comic_like_path(like, comic_id: comic.id), method: :delete, id: "like-button", remote: true do %>
+      <%= image_tag("icon_red_heart.svg") %>
+      <span>
+        <%= comic.like_count %>
+      </span>
+    <% end %>
+  <% else %>
+    <%= button_to comic_likes_path(comic), id: "like-button", remote: true do %>
+      <%= image_tag("icon_heart.svg") %>
+      <span>
+        <%= comic.like_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+  <%= image_tag("icon_heart.svg") %>
+    <span>
+      <%= comic.like_count %>
+    </span>
+<% end %>

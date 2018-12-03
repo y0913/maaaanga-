@@ -1,4 +1,4 @@
-<div class="contents row">
+<div class="contents__row">
   <div class="container">
     <%= form_tag('/comics', action: :create, method: :post) do %>
       <h2 class="title-header">
@@ -6,7 +6,6 @@
       </h2>
       <div class="field">
         <input placeholder="Image Url" type="text" name="image">
-          <textarea cols="30" name="text" placeholder="text" rows="10"></textarea>
           <input type="submit" value="SENT" '/search'>
       </div>
     <% end %>

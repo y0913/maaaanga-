@@ -5,17 +5,20 @@ class ComicsController < ApplicationController
 		@comics = Comic.new
 	end
 	def create
-      Comic.create(name: params[:name], image: params[:image], text: params[:text])
+      Comic.create(name: comic_params[:name], image: comic_params[:image], text: comic_params[:text], user_id: current_user.id)
     end
 
     def search
     	@comics = Comic.new
     	@comics = Comic.order("created_at DESC")
     end
-
+    def show
+        @comic = Comic.find(params[:id])
+        @comment = @comic.comments.all
+    end
 
     private
-    def tweet_params
+    def comic_params
       params.permit(:name, :image, :text)
     end
 
