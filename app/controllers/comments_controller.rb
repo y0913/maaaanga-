@@ -1,6 +1,9 @@
 class CommentsController < ApplicationController
 	def create
 		@comment = Comment.create(text: comment_params[:text], comic_id: comment_params[:comic_id], user_id: current_user.id)
+		respond_to do|format|
+			format.js
+		end
 	end
 	def show
 		@comments = Comment.find(params[:id]).order("created_at DESC")

@@ -16,6 +16,13 @@ class ComicsController < ApplicationController
         @comic = Comic.find(params[:id])
         @comment = @comic.comments.all
     end
+    def destroy
+        comic = Comic.find(params[:id])
+        if comic.user_id == current_user.id
+           comic.destroy
+        end
+        redirect_to search_comics_path
+    end
 
     private
     def comic_params

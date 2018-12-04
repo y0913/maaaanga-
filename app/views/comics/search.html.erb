@@ -10,9 +10,9 @@
                     <img src="<%= comic.image %>" class="card-size">
                      <span class="card-title"></span>
                        <%= link_to "詳細", "/comics/#{comic.id}", method: :get %>
+                       <%= link_to "削除", "/comics/#{comic.id}", method: :delete %>
                    </div>
                     <div class="card-content">
-                      <p><%= comic.text %></p>
                  </div>
                </div>
               </div>

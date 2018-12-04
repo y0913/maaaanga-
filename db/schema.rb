@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 2018_12_01_125337) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "comics_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["comics_id"], name: "index_likes_on_comics_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
-  end
-
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -51,6 +42,4 @@ ActiveRecord::Schema.define(version: 2018_12_01_125337) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "likes", "comics", column: "comics_id"
-  add_foreign_key "likes", "users"
 end

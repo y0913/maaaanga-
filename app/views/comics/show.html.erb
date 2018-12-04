@@ -15,12 +15,11 @@
         <%= simple_format(comment.text) %>
         <% end %>
     </p>
-
    </div>
   <div class="container">
   <% if current_user %>
-      <%= form_tag("/comics/#{@comic.id}/comments", method: :post) do %>
-        <textarea cols="30" name="text" placeholder="コメントする" rows="2"></textarea>
+      <%= form_tag("/comics/#{@comic.id}/comments", method: :post, :remote => true) do %>
+        <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="textarea"></textarea>
         <input type="submit" value="SENT">
       <% end %>
     <% end %>
